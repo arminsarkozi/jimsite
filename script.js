@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2022 arminsarkozi
+ * MIT License - license: https://github.com/arminsarkozi/jimsite/blob/main/LICENSE
+ */
+
+
+/**
  * Refresh age in index.html
  */
 
