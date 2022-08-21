@@ -1,0 +1,317 @@
+/**
+ * Table of Contents:
+ *
+ * jim-card..........on big screen: left, on small screen: top - about Jim
+ *
+ * FOOTER
+ *
+ * BUTTONS
+ *
+ * MORE IMPORTANT THINGS
+ *
+ * KEYFRAMES....................animations
+ *
+ * Explanations:
+ * 1. Big divison for image-size increasing (minimal
+ *    element-displacement)
+ *
+ * 2. Profile radius - works, because the image is a square
+ *
+ * 3. Animation to: filter: none; - 2 seconds, slow 
+ *    start than fast than slow finish, 0.1 second
+ *    delay, 1 playback, normal forwards, finish
+ *    on `filter: none;` (forwards)
+ *
+ * 4. Text shadow
+ */
+
+
+
+
+
+/* ---------------- *\
+  #jim-card
+\* ---------------- */
+
+.jim-card {
+    background-color: #66797f8f;
+    padding-top: 7px;
+}
+
+    .jim-card__photo {
+        min-height: 30vh; /* [1] */
+    }
+
+    .jim-card__photo > img {
+        border: 6px solid saddlebrown;
+        border-radius: 50%; /* [2] */
+        max-width: 40%;
+        filter: grayscale(400%) contrast(300%) invert(50%); /* filters */
+        animation: grayScaleToNo 2s ease-in-out .1s 1 normal forwards; /* [3] */
+        transition: all 2s ease-in-out .1s;
+    }
+
+    .jim-card__photo:hover > img {
+        max-width: 50%;
+        border: 6px solid salmon;
+        filter: contrast(500%);
+    }
+
+/* In small screen */
+@media (max-width: 768px) {
+    
+    .jim-card::after {
+        content: "";
+        background-color: rgb(145, 138, 138);
+        display: block;
+        height: 3.6px;
+        width: 80vw;
+        margin: 1.5rem auto;
+    }
+    
+}
+
+
+@media (min-width: 768px) {
+
+    .jim-card {
+        border: 4px solid saddlebrown;
+        height: 100%;
+        position: fixed;
+        width: 24.68887262079063%;
+    }
+
+    .jim-card__photo {
+        margin-top: 26%;
+    }
+    
+    .jim-card__photo > img {
+        max-width: 50%;
+    }
+
+    .jim-card__photo:hover > img {
+        max-width: 60%;
+    }
+
+}
+
+@media (min-width: 780px) and (max-width: 1058px) {
+
+        .jim-card {
+            width: 30.6%;
+        }
+
+}
+
+
+.description {
+    margin: 10px;
+}
+
+    .description :not(.description__more-data) b {
+        color: #fff;
+    }
+
+    .description__more-data b {
+        color: bisque;
+    }
+
+    .description__name {
+        text-align: center;
+        text-decoration-line: underline;
+        -moz-text-decoration-line: underline;
+        color: #000;
+        text-shadow: saddlebrown 10px 0 10px; /* [4] */
+        animation: toSmallFont 2s ease-in-out .1s 1 normal forwards;
+        
+    }
+
+    .description__name, .description__job, .description__more-data {
+        display: block;
+        width: 100%;
+        background-color: rgb(80, 146, 187);
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    .description__child:nth-of-type(1n+1) {
+        margin-top: 2%;
+    }
+
+    @media (min-width: 768px) {
+    
+        .description__child:nth-of-type(1n+1) {
+            margin-top: 10%;
+        }
+
+    }
+
+
+.external-biography {
+    background-color: rgb(197, 181, 109, 0.74);
+    margin: 10px;
+    padding: 9px;
+    border-radius: 4px;
+}
+
+    .external-biography q {
+        font-size: clamp(12.8px, 93%, 18px);
+        line-height: 1.1;
+    }
+
+    .small-title {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 10px;
+    }
+
+
+@media (min-width: 768px) {
+
+    .external-biography {
+        max-width: 99%;
+        min-height: 20%;
+        margin: 1.5rem auto;
+    }
+
+        .external-biography q {
+            font-size: clamp(14px, 40%, 22px);
+            line-height: 1.3;
+        }
+    
+}
+
+
+
+
+
+/* ---------------- *\
+  #FOOTER
+\* ---------------- */
+
+.footer {
+    background-color: rgb(236, 204, 165);
+    padding: 15px;
+}
+
+    .footer a:hover i {
+        text-decoration: underline;
+    }
+
+
+
+
+
+/* ---------------- *\
+  #BUTTONS
+\* ---------------- */
+
+.button {
+    background-color: rgb(236, 204, 165);
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(229, 191, 143);
+}
+
+
+    .button__hire-me {
+        width: 80%;
+        margin: 0;
+        text-align: center;
+    }
+
+
+
+.load-more-posts {
+    width: 100%;
+    margin: .1rem 0 3rem 0;
+}
+
+
+
+
+
+/* ---------------- *\
+  #MORE IMPORTANT THINGS
+\* ---------------- */
+
+.hire-me-block {
+    margin: 4px;
+}
+
+
+@media (min-width: 768px) {
+    
+        .articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+    
+        .articles::before {
+            width: 80%;
+        }
+
+}
+
+.article {
+    background-color: rgba(41, 99, 91, 0.432);
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 10px;
+}
+
+@media (min-width: 768px) {
+
+        .article {
+            max-width: 98%;
+            margin: 0;
+        }
+
+}
+
+    .article img {
+        max-width: 20%;
+        filter: contrast(110%);
+        border-radius: 6px;
+    }
+
+    .article div {
+        margin-left: 1rem;
+    }
+
+    .article__title {
+        font-size: 1.3rem;
+        font-weight: bolder;
+        margin: .5rem 0 .5rem 0;
+    }
+
+    .article__description {
+        line-height: 1.3;
+    }
+
+
+
+
+
+/* ---------------- *\
+  #KEYFRAMES
+\* ---------------- */
+
+@keyframes toSmallFont {
+    to { color: #fff; font-size: 16px; }
+}
+
+
+
+@keyframes grayScaleToNo {
+    to { filter: none; }
+}

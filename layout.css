@@ -1,0 +1,95 @@
+/**
+ * Table of Contents:
+ *
+ * GRID................set Grid
+ *     -> Set grid and big-screen grid
+ *     -> Mobile grid
+ *
+ * GRID AREAS..........set Grid areas (grid-area property)
+ *
+ * ELEMENT LAYOUTS.....class(es) which influence
+ *                     an element layout
+ *
+ * Expalantions:
+ * 1. Grid columns reset, because < 768px screen only rows need to be set
+ * 2. Minimum height: full-size (100vh) - footer height (1rem)
+ * 3. Positioning of child elements in the center in both vertical and horizontal position with flexbox
+ */
+
+
+
+
+
+/* ---------------- *\
+  #GRID
+\* ---------------- */
+
+/* ## Set grid and big-screen grid */
+body {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+        "jim-card jim-card main main main main main main"
+        "jim-card jim-card footer footer footer footer footer footer"
+}
+
+/* ## Mobile grid */
+
+@media (max-width: 768px) {
+
+        body {
+            grid-template-columns: auto; /* [1] */
+            grid-template-rows: 3fr 5fr 1fr;
+            grid-template-areas:
+                "jim-card"
+                "main"
+                "footer";
+        }
+
+}
+
+
+
+
+
+/* ---------------- *\
+  #GRID AREAS
+\* ---------------- */
+.jim-card {
+    grid-area: jim-card;
+}
+
+
+
+.main {
+    grid-area: main;
+}
+
+@media (min-width: 768px) {
+
+        .main {
+            min-height: calc(100vh - 1rem); /* [2] */
+        }
+
+}
+
+
+
+.footer {
+    grid-area: footer;
+}
+
+
+
+
+
+/* ---------------- *\
+  #ELEMENTS LAYOUTS
+\* ---------------- */
+
+/* [3] */
+.center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,145 @@
+/**
+ * OVERVIEW
+ *
+ * base.css..............Basic setting of the site
+ * components.css........Components style
+ * layout.css............layout of the site, for example grid
+ */
+
+/**
+ * Table of Contents:
+ *
+ * IMPORTS.............import font family
+ * BOX-SIZING..........include padding and borders to size
+ * DEFAULT SETTINGS....for example <b> is bold, <em> is italic,
+ *                     set font-family
+ *     -> Headings........H1-H6 heading
+ *     -> 
+ *
+ * Explanations:
+ * 1. Full height body
+ * 2. Other quotes
+ * 3. Set open quote
+ * 4. Set close quote
+ */
+
+
+
+
+
+/* ---------------- *\
+  #IMPORTS
+\* ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@600&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+
+
+
+
+/* ---------------- *\
+  #BOX-SIZING
+\* ---------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+/* ---------------- *\
+  #DEFAULT SETTINGS
+\* ---------------- */
+
+body {
+    width: 100%;
+    height: 100vh; /* [1] */
+    font-family: "Open Sans", sans-serif;
+}
+
+b {
+    font-weight: bold;
+}
+
+
+i, em {
+    font-style: italic;
+}
+
+
+/* Headings */
+
+h1 { font-size: 2em; }
+
+h2 { font-size: 1.5em; }
+
+h3 { font-size: 1.17em; }
+
+h4 { font-size: 1.33em; }
+
+h5 { font-size: 0.83em; }
+
+h6 { font-size: 0.67em; }
+
+h1, h2, h3, h4, h5, h6 { display: block; }
+
+
+div {
+    display: block;
+}
+
+
+a {
+    color: rgb(65, 96, 153);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(39, 65, 114);
+    font-weight: bold;
+}
+
+img {
+    pointer-events: none;
+}
+
+blockquote, q {
+    quotes: "„" "”"; /* [2] */
+    font-family: "Noto Serif HK", serif;
+    font-size: .89rem;
+}
+
+blockquote:before,  q:before {
+    content: open-quote; /* [3] */
+}
+
+blockquote:after, q:after {
+    content: close-quote; /* [4] */
+}
+
+form {
+    margin-top: 1rem;
+}
+
+input {
+    margin: 2.5px 0 2.5px 0;
+    padding: 6px;
+    min-width: 100%;
+    border: 2.5px solid rgba(136, 198, 219, 0.774);
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:invalid {
+    background-color: red;
+    color: #fff;
+}
+
+input[type="submit"] {
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}

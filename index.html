@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="assets/jim-bunny-profile-1.png">
+    <title>Jimsite &ndash; Jim bunny's official website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="components.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="jim-card">
+        <div class="jim-card__photo center-center">
+            <img src="assets/jim-bunny-profile-1.png" alt="Jim bunny" class="profile">
+        </div>
+        <div class="description">
+            <p class="description__child description__name center-center">Jim von Romanov</p>
+            <p class="description__child description__job"><b>Programming</b> consultant, <b>SEO</b> consultant, <b>businessman</b>, master <b>runner</b>, award-winning <b>hand-licker</b></p>
+            <p class="description__child description__more-data" id="variable-text"><b>Age:</b> <noscript>--</noscript><script>let birth = new Date(2019, 06, 17); let now = new Date(); let howMany = (now-birth)/1000/60/60/24/365; document.write(howMany.toFixed(5) + " days old");</script>; <b>Gender:</b> male;</p>
+        </div>
+        <div class="hire-me-block center-center">
+            <a href="index.html?app=hire-me" class="button button__hire-me">
+                <i class="fa-regular fa-hand"></i>&nbsp;Hire me
+            </a>
+        </div>
+    </div>
+    <main class="main" id="main">
+        <div class="external-biography">
+            <p class="small-title">External review - what they write about me</p>
+            <p><q>Jim is a clever, brave bunny with excellent talent. He is already preparing for university, and would like to go to Cambridge, MIT, Harvard, Northeastern or Oxford. His interests include programming, math problem solving, law and agriculture. Agriculture is not for nothing! After all, he's a bunny. He's already working for big multinational companies, and he may soon be founding one himself. He's got brown fur, erect ears and super-color-spotted legs.</q></p>
+        </div>
+
+        <div class="articles">
+            <div class="article">
+                <img src="assets/blog/jim-bunny-1.png" alt="Jim">
+                <div>
+                    <h1 class="article__title"><a href="#">Why do we eat carrots?</a></h1>
+                    <p class="article__description">For nothing. People just started feeding them because they saw a movie about a rabbit eating carrots. Then it spread. It's a total misconception.</p>
+                </div>
+            </div>
+            <div class="article">
+                <img src="assets/blog/full-css-consulting.png" alt="Jim">
+                <div>
+                    <h1 class="article__title"><a href="#">How to write object-oriented CSS code?</a></h1>
+                    <p class="article__description"><b>Simple.</b> Just a basic knowledge of CSS and you're good to go. Hire me and I'll explain what you need to know in just 60 minutes.</p>
+                </div>
+            </div>
+            <div class="article">
+                <img src="assets/blog/full-seo-consulting.png" alt="Jim">
+                <div>
+                    <h1 class="article__title"><a href="#">Full SEO consulting</a></h1>
+                    <p class="article__description"><b>SEO.</b> Learn SEO, dive into its mysteries! 5-day SEO consultancy and training course where you can learn a lot about search engine optimization and how to get your website to rank higher on the internet.</p>
+                </div>
+            </div>
+            <br>
+            <div class="center-center">
+                <a href="#" class="button load-more-posts">Load more posts...</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer center-center">
+        <a href="https://github.com/arminsarkozi/jimsite/blob/main/LICENSE" target="_blank">
+            &copy; 2022 by arminsarkozi&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </footer>
+</body>
+</html>
